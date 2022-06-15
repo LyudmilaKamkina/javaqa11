@@ -34,4 +34,16 @@ public class PosterManagerTest {
         Posters[] expected = new Posters[] {fifth, fourth, third};
         Assertions.assertArrayEquals(expected, manager.findLast());
     }
+
+    @Test
+    public void shouldShowDefaultLastFilms(){
+        PosterManager manager = new PosterManager();
+        manager.addFilm(first);
+        manager.addFilm(second);
+        manager.addFilm(third);
+        manager.addFilm(fourth);
+        manager.addFilm(fifth);
+        Posters[] expected = new Posters[] {fifth, fourth, third, second, first};
+        Assertions.assertArrayEquals(expected, manager.findLast());
+    }
 }
